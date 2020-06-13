@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<title>
@@ -5,6 +6,7 @@
 	</title>
 </head>
 <body>
+	{% include "nav.html" %}
 	<br><br>
 	<h3><center>
 		<form name="login" action="" method="post">
@@ -18,5 +20,6 @@
  			</p>
  			<p>{{ form.submit() }}</p>
 	</center>
+{% include "footer.html" %}
 </body>
 </html>
