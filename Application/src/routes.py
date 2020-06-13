@@ -1,6 +1,8 @@
 from src import app
 from flask import render_template
+from src.forms import LoginForm
 
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def login():
-	return render_template("login.html")
+	form = LoginForm()
+	return render_template("login.html", form=form, login=True)
