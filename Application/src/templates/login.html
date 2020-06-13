@@ -1,1 +1,22 @@
-<h1>hey</h1>
+<html>
+<head>
+	<title>
+		Login Page
+	</title>
+</head>
+<body>
+	<br><br>
+	<h3><center>
+		<form name="login" action="" method="post">
+			{{ form.hidden_tag()}}
+			<p>
+				{{ form.user.label }}<br>
+				{{ form.user(size=8) }}<br>
+
+				{{ form.password.label }}<br>
+				{{ form.password(size=8) }}<br>
+ 			</p>
+ 			<p>{{ form.submit() }}</p>
+	</center>
+</body>
+</html>
