@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+
+    <title>{{ title }}</title>
+</head>
+<body>
+{% include "nav.html" %}
+<center>
+<h1>Create Customer Screen</h1>
+<div style="width: 20%">
+  {% if error %}
+  <h2 style="color: red;">Error: {{error}}</h2>
+  {% endif %}
+
+  {% with message = get_flashed_messages() %}
+  {% if message %}
+  
+      <h2 style="color: green;">{{ message }}</h2>
+    
+  {% endif %}
+{% endwith %}
+
+<form action="/update_customer" method="post" class="pure-form">
+    {{ form.hidden_tag() }}
+    <div> {{ form.ssnid.label }} : {{ form.ssnid(size=15)}} </div>
+    <p>
+    <br>
+    {{ form.name.label }} : {{ form.name(size=15)}}
+    <br>
+    <p>
+    {{ form.age.label }} : {{ form.age(size=15)}}
+    <br>
+    <p>
+    {{ form.Address.label }} : {{ form.Address(size=15)}}
+    <br>
+    <p>
+    {{ 'State : ' }}<select class="form-control" name="state" id="exampleFormControlSelect1">
+      <option>Gujarat</option>
+      <option>Haryana</option>
+      <option>Karnataka</option>
+      <option>Banglore</option>
+      <option>Bihar</option>
+    </select>
+    <br>
+    <p>
+    {{ 'City : ' }}<select class="form-control" name="city" id="exampleFormControlSelect1">
+      <option>Ahmedabad</option>
+      <option>mumbai</option>
+      <option>thane</option>
+      <option>jaipur</option>
+    </select>
+    <br>
+    <p>
+    {{ form.submit() }}
+    <br>
+</center>
+{% include "footer.html" %}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

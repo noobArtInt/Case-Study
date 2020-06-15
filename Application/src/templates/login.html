@@ -12,21 +12,19 @@
 	{% include "nav.html" %}
 	<br><br>
 	<h3><center>
-		<form name="login" action="" method="post" class="pure-form">
+		<form name="login" action="#" method="post" class="pure-form">
 			{{ form.hidden_tag()}}
 			<p>
-				{{ form.user.label }}<br>
-				{{ form.user(size=8) }}<br>
+				{{ form.user(size=20) }}<br>
+				<br>
 
-				{{ form.password.label }}<br>
-				{{ form.password(size=8) }}<br>
+				{{ form.password(size=20) }}<br>
  			</p>
  			<p>{{ form.submit() }}</p>
- 			</form>
+ 		</form>	
 	</center>
 	<br>
 	<br>
 
-{% include "footer.html" %}
 </body>
 </html>
